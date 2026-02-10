@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorgstart Processchema</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f4 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #257A7A;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+        
+        .vision {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0 50px;
+            flex-wrap: wrap;
+        }
+        
+        .vision-card {
+            background: linear-gradient(135deg, #257A7A 0%, #1D5F5F 100%);
+            color: white;
+            padding: 25px 40px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(37,122,122,0.3);
+        }
+        
+        .vision-card.secondary {
+            background: linear-gradient(135deg, #F47C5D 0%, #e0654a 100%);
+            box-shadow: 0 8px 20px rgba(244,124,93,0.3);
+        }
+        
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            background: white;
+            border: 3px solid #E8F4F4;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            border-color: #257A7A;
+            box-shadow: 0 12px 30px rgba(37,122,122,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, #257A7A 0%, #1D5F5F 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(37,122,122,0.4);
+        }
+        
+        .step h3 {
+            color: #257A7A;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .step-content {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        .step-content strong {
+            color: #0f172a;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .step-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .step-content li {
+            margin: 5px 0;
+        }
+        
+        .arrow {
+            text-align: center;
+            font-size: 2rem;
+            color: #257A7A;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .vision {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Zorgstart Processchema</h1>
+            <p class="subtitle">Van ontslag naar leven thuis</p>
+            
+            <div class="vision">
+                <div class="vision-card">
+                    🏠 LEVEN THUIS<br>
+                    <small style="font-size:0.9rem; opacity:0.9">veilig · zelfstandig · zinvol</small>
+                </div>
+                <div class="vision-card secondary">
+                    🤝 ZORGSTART<br>
+                    <small style="font-size:0.9rem; opacity:0.9">coördinatie · regie</small>
+                </div>
+            </div>
+        </header>
+        
+        <div class="process-flow">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">📋</div>
+                <h3>DOCUMENTEN</h3>
+                <div class="step-content">
+                    <strong>Medische data verzamelen:</strong>
+                    <ul>
+                        <li>Ontslagbrief</li>
+                        <li>Verpleegkundig verslag</li>
+                        <li>Medicatieschema</li>
+                        <li>Medische historiek</li>
+                    </ul>
+                    <strong>→ Document scraping</strong><br>
+                    Structureren en groeperen
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">💡</div>
+                <h3>INZICHT</h3>
+                <div class="step-content">
+                    <strong>Dubbel lexicon:</strong>
+                    <ul>
+                        <li><strong>Medisch:</strong> diagnoses, risico</li>
+                        <li><strong>Patiëntgericht:</strong> ervaring, betekenis</li>
+                        <li><strong>Tijd:</strong> recent vs historisch</li>
+                    </ul>
+                    <strong>→ Probleemgebieden & aandachtspunten</strong>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">🎯</div>
+                <h3>PRIORITEIT</h3>
+                <div class="step-content">
+                    <strong>Alle gedetecteerde probleemgebieden:</strong>
+                    <ul>
+                        <li>Valrisico</li>
+                        <li>Medicatiebeheer</li>
+                        <li>Cognitie</li>
+                        <li>Sociaal isolement</li>
+                        <li>...</li>
+                    </ul>
+                    <strong>Contextfilter:</strong><br>
+                    Ontslag, leeftijd, thuissituatie, mantelzorg, draagkracht
+                    <br><br>
+                    <strong>→ Activeren: max 3-4 zichtbaar</strong><br>
+                    <strong>→ Monitoren: overige</strong>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-icon">📦</div>
+                <h3>BUNDELS</h3>
+                <div class="step-content">
+                    <strong>Zorgbundels per probleemgebied</strong><br>
+                    <em>Bijvoorbeeld: valrisico → veiligheid</em>
+                    <ul>
+                        <li><strong>Zorg:</strong> verpleegkundige, kinesist</li>
+                        <li><strong>Welzijn:</strong> ergotherapeut, sociaal werk</li>
+                        <li><strong>Praktisch:</strong> alarm, maaltijdservice</li>
+                    </ul>
+                    <strong>→ Beperkt aantal haalbare bundels</strong>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-icon">🔍</div>
+                <h3>NETWERK</h3>
+                <div class="step-content">
+                    <strong>Voorgesteld zorgnetwerk</strong><br>
+                    Rollen en specialisaties
+                    <br><br>
+                    <strong>Matchmaking platform:</strong>
+                    <ul>
+                        <li>📍 Locatie</li>
+                        <li>🎓 Specialisatie</li>
+                        <li>🗣️ Taal & cultuur</li>
+                        <li>📅 Beschikbaarheid</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-icon">✅</div>
+                <h3>KEUZE</h3>
+                <div class="step-content">
+                    <strong>🙋 Patiënt kiest zelf</strong>
+                    <br><br>
+                    <strong>→ Zorgplan (levend, aanpasbaar)</strong>
+                    <br><br>
+                    <strong>Voor professionals:</strong><br>
+                    Medisch, context, bundels, medicatie
+                    <br><br>
+                    <strong>Voor patiënt:</strong><br>
+                    Klare taal, wat & waarom, keuzes, geruststelling
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-icon">📊</div>
+                <h3>OPVOLGING</h3>
+                <div class="step-content">
+                    <strong>Zorgnetwerk:</strong><br>
+                    Arts, verpleegkundige, kinesist, sociaal werk
+                    <br><br>
+                    <strong>Communicatie-afspraken:</strong><br>
+                    Wie, wanneer, hoe
+                    <br><br>
+                    <strong>🏥 Nurseline Dashboard:</strong>
+                    <ul>
+                        <li>Actieve zorgplannen</li>
+                        <li>Ontslagstatus</li>
+                        <li>Contextwijzigingen</li>
+                        <li>Bundels & acties</li>
+                        <li>Medicatie-alerts</li>
+                        <li>Communicatiesignalen</li>
+                    </ul>
+                    <strong>→ Bijsturen & herijken</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
